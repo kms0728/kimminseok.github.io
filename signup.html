@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function login(){
+        var reg = new RegExp("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$");
+        const id = document.querySelector('#id').value;
+        const pw = document.querySelector('#pw').value;
+        const name = document.querySelector('#name').value;
+        const emill = document.querySelector('#emill').value;
+
+        if((id && pw) && (name && emill)){
+          
+          if(reg.test(pw)){
+            alert("회원가입 되었습니다");
+            location.href='login.html'
+          }
+          else alert(reg.test(pw));
+          
+        }
+        else if((id && !pw)&&(!name && !emill)){
+          alert("비밀번호,이름,이메일를 입력하세요");
+        }
+        else if((!id && pw)&&(!name && !emill)){
+          alert("아이디,이름,이메일를 입력하세요");
+        }
+        else if((!id && !pw)&&(name && !emill)){
+          alert("아이디,비밀번호,이메일를 입력하세요");
+        }
+        else if((!id && !pw)&&(!name &&emill)){
+          alert("아이디,비밀번호,이름를 입력하세요");
+        }
+        else if((id && pw) && (!name && !emill)){
+          alert("이름,이메일를 입력하세요");
+        }
+        else if((id && !pw) && (name && !emill)){
+          alert("비밀번호,이메일를 입력하세요");
+        }
+        else if((!id && pw) && (name && !emill)){
+          alert("아이디,이메일를 입력하세요");
+        }
+        else if((id && pw) && (!name && !emill)){
+          alert("이름,이메일를 입력하세요");
+        }
+        else if((id && !pw) && (!name && emill)){
+          alert("비밀번호,이름를 입력하세요");
+        }
+        else if((!id && pw) && (!name && emill)){
+          alert("아이디,이메일를 입력하세요");
+        }
+        else if((!id && pw)&&(name && emill)){
+          alert("아이디를 입력하세요");
+        }
+        else if((id && !pw)&&(name && emill)){
+          alert("페스워드를 입력하세요");
+        }
+        else if((id && pw)&&(!name && emill)){
+          alert("이름를 입력하세요");
+        }
+        else if((id && pw)&&(name && !emill)){
+          alert("이메일를 입력하세요");
+        }
+        else{
+          alert("아무것도 적지 않았습니다");
+        }
+
+      }
+      
+
+    </script>
+
+    <style>
+
+body {
+  background-color: #34495e;
+}
+
+.loginForm {
+  position:absolute;
+  width:300px;
+  height:500px;
+  padding: 30px, 20px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+h2{
+  text-align: center;
+  margin: 30px;
+}
+
+.Form{
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+
+.text {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.btn:hover,
+.btn:focus{
+  background-position: right;
+}
+
+.bottomText {
+  text-align: center;
+}
+    </style>
+</head>
+<body width="100%" height="100%">
+    <form action="index.html" method="post" class="loginForm">
+      <h2>signup</h2>
+      <div class="Form">
+        <input type="text" id="id" class="text" placeholder="ID">
+      </div>
+      <div class="Form">
+        <input type="password" id="pw" class="text" placeholder="PW">
+      </div>
+      <div class="Form">
+        <input type="text" id="name" class="text" placeholder="name">
+      </div>
+      <div class="Form">
+        <input type="text" id="emill" class="text" placeholder="emill">
+      </div>
+      <button type="button" class="btn" onClick="login()">
+        SIGN UP
+      </button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진첩</title>
+
+    <link rel="stylesheet" href="album.css">
+
+    <script src="slideShow.js"></script>
+</head>
+<body>
+    <nav>
+        <button id="back" type="button" onclick="location.href='mainpage.html'">&nbsp;&nbsp;&nbsp;돌아가기</button>
+    </nav>
+    <div id="slideShow">
+        <ul class="slides">
+            <!-- 슬라이드에 사용할 이미지들의 class를 slideImage로 지정하여 따로 관리할 것입니다! -->
+            <li><img class="slideImage" src="png\a.png"></li>
+            <li><img class="slideImage" src="png\b.png"></li>
+            <li><img class="slideImage" src="png\c.png"></li>
+            <li><img class="slideImage" src="png\d.png"></li>
+            <li><img class="slideImage" src="png\e.png"></li>
+        </ul>
+        <p class="controller">
+            <span class="prev">&lang;</span> <!-- &lang은 '왼쪽 화살표'입니다! -->
+            <span class="next">&rang;</span> <!-- &rang은 '오른쪽 화살표'입니다! -->
+        </p>
+    </div>
+    
+</body>
+</html>

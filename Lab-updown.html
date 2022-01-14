@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업다운게임</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        .contWrap{
+            position: relative;
+            width: 400px;
+            background-color: antiquewhite;
+            padding: 20px;
+            top : 40%;
+            left : 50%;
+            text-align: center;
+            transform: translate(-50%, -50%); 
+        }
+
+        input {
+            padding: 10px 20px;
+            font-size: 20px;
+            text-align: center;
+            max-width: 170px;
+        }
+
+        button {
+            font-size : 20px;
+            padding: 8px 20px;
+            text-align: center;
+        
+        }
+
+    </style>
+
+    <script>
+        // 코드를 작성하기전 웹브라우저에서 HTML과 CSS를 확인해보세요! 그러면 코드 작성에 더욱 도움이 될거 같아요!
+
+        // HTML & CSS는 미리 완성 시켜 놨습니다. JS만 작성해서 실습을 완료하시면 됩니다!
+        // 사용된 HTML의 태그는 3가지입니다.
+        // <input class="UserInput"></input> 사용자가 예측한 숫자를 적는 곳입니다.
+        // <p class="result"></p> 시작시에 1부터 10사이, 게임 시작후 -> 업, 다운, 정답의 여부가 나오는 곳 입니다.
+        // <button class="startBtn"></button> 확인 버튼입니다. 여기에 클릭이벤트를 연결하시면 됩니다!
+
+        // 코드에는 정답은 없습니다. 자유롭게 입력하시고 코드를 개선시키고 싶으면 자유롭게 기능을 추가 및 개선시켜도 됩니다.(HTML, CSS, JS 모두 가능 !!)
+
+        // 생성된 랜덤숫자(난수)를 콘솔로그나 alert()에 표기시켜 주면 테스트하기 더 좋지 않을까요~?
+        // 배열을 이용하거나, 함수를 따로 정의해 재사용성을 고려해주면 더 좋을거 같네요!
+        let ran = Math.random()*100;
+        ran = parseInt(ran);
+        let i=0;
+        console.log(i);
+
+
+        window.onload = function(){
+
+            const btn = document.querySelector('.startBtn');
+            btn.addEventListener('click', test);
+
+            function test(){
+                const num_val = document.querySelector('.num').value;
+                let text = document.querySelector(".result");
+                let add = document.querySelector(".add");
+                
+                console.log(i);
+                console.log(ran);
+                if(ran==num_val){
+                    text.innerHTML = "정답";
+                }else if(ran>num_val){
+                    text.innerHTML = "업";
+                    i++;
+                    add.innerHTML = "시도횟수: "+i;
+                }else if(ran<num_val){
+                    text.innerHTML = "다운";
+                    i++;
+                    add.innerHTML = "시도횟수: "+i;
+                }
+            }
+
+
+
+        }
+        function test1(){
+            const num_val = document.querySelector('.num').value;
+            let text = document.querySelector(".result");
+            let add = document.querySelector(".add");
+                
+            if(ran==num_val){
+                text.innerHTML = "정답";
+            }else if(ran>num_val){
+                text.innerHTML = "업";
+                i++;
+                add.innerHTML = "시도횟수: "+i;
+            }else if(ran<num_val){
+                text.innerHTML = "다운";
+                i++;
+                add.innerHTML = "시도횟수: "+i;
+            }
+        }
+
+        function enterkey(){
+            var keycode = event.keyCode;
+            if(keycode == 13){
+                 test1();
+            }
+        }
+
+
+    </script>
+
+    
+</head>
+<body>
+    <div class="contWrap">
+        <h3>Choose number</h3>
+        <h5 class="add">시도횟수: 0</h5>
+        <p class="result"></p>
+        <p>1부터 100사이</p>
+        <input type="number" onkeyup="enterkey(this);"  class="num">
+        <button type="button" class="startBtn">확인</button>
+        <button type="button" onclick="location.href='mainpage.html'">돌아가기</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤강화</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        .contWrap{
+            position: relative;
+            width: 400px;
+            background-color: antiquewhite;
+            padding: 20px;
+            top : 40%;
+            left : 50%;
+            text-align: center;
+            transform: translate(-50%, -50%); 
+        }
+
+        input {
+            padding: 10px 20px;
+            font-size: 20px;
+            text-align: center;
+            max-width: 170px;
+        }
+
+        button {
+            font-size : 20px;
+            padding: 8px 20px;
+            text-align: center;
+        
+        }
+
+    </style>
+    <script>
+        window.onload = function() {
+            let ran = Math.random()*100;
+            ran = parseInt(ran);
+
+            const btn = document.querySelector('.startBtn');
+            btn.addEventListener('click', random);
+
+            function random(){
+                let lab_val = document.querySelector(".lab").value;
+                alert(lab_val);
+
+                if(ran>0){
+
+                }
+                else if(ran>0){
+    
+                }
+                else if(ran>0){
+    
+                }
+                else{
+            
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="contWrap">
+        <h3>돈: 100000</h3>
+        <h5 class="lab">강화레벨: 0</h5>
+        <p class="result"></p>
+        <p></p>
+        <button type="button" class="startBtn">구매</button>
+    </div>  
+</body>
+</html>
